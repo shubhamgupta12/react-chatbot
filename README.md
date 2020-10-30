@@ -1,1 +1,3 @@
-Add env variable `API_URL` with your chatbot api that fetches response messages
+`npm install` and then `npm start`.
+
+Note: Node must be installed on the system.
