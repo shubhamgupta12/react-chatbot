@@ -15,8 +15,12 @@ const Chat = ({ chat, userMessage, sendMessage }) => {
   const endOfMessages = useRef(null);
 
   const scrollToBottom = () => {
-    showBot && endOfMessages.current.scrollIntoView({ behavior: "smooth" });
+    if (showBot) {
+      const objDiv = endOfMessages.current;
+      objDiv.scrollTop = objDiv.scrollHeight;
+    }
   };
+
   useEffect(scrollToBottom, [chat, showBot]);
 
   //  Function that handles user submission
@@ -46,7 +50,7 @@ const Chat = ({ chat, userMessage, sendMessage }) => {
             &times;
           </button>
           {/* Handle Messages */}
-          <div className="chat-body">
+          <div ref={endOfMessages} className="chat-body">
             <span className="chat-start">Today</span>
             {!chat.length
               ? ""
@@ -58,7 +62,6 @@ const Chat = ({ chat, userMessage, sendMessage }) => {
                     {msg.message}
                   </div>
                 ))}
-            <div ref={endOfMessages}></div>
           </div>
           {/* Input Box */}
           <div className="chat-footer">
@@ -69,6 +72,7 @@ const Chat = ({ chat, userMessage, sendMessage }) => {
               onKeyPress={handleEnterPress}
               value={message}
               placeholder="Type a message..."
+              autoComplete="off"
             ></input>
             <button className="chat-send-btn" onClick={handleClick}>
               <PaperPlaneIcon />
