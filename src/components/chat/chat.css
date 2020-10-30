@@ -98,7 +98,11 @@
   right: 10px;
   border: none;
   background: none;
-  /* background-image: url("../../assets/paperPlane.svg") */
+  cursor: pointer;
+}
+
+.chat-footer .chat-send-btn:focus {
+  outline: none;
 }
 
 .chat-footer .chat-send-btn svg {
