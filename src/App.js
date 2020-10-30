@@ -14,7 +14,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="container">
-        {/* Insert Chat Component HERE! */}
         <Chat />
       </div>
     </Provider>
