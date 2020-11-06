@@ -23,17 +23,14 @@ export const userMessage = message => async dispatch => {
 
 //  Sends the message to the bot - API CALL
 export const sendMessage = message => async dispatch => {
-  const URL1 = "https://d7se6vu2fb.execute-api.ap-northeast-1.amazonaws.com/stage1/chat";
+  const URL1 =
+    "https://d7se6vu2fb.execute-api.ap-northeast-1.amazonaws.com/stage1/chat";
   // const URL2 = "https://gvsr9xpjq1.execute-api.ap-southeast-1.amazonaws.com/test/chat";
   try {
     const body = { text: message };
-    const res = await axios.post(
-      `${URL1}`,
-      body,
-      {
-        headers: { "Content-Type": "application/json" }
-      }
-    );
+    const res = await axios.post(`${URL1}`, body, {
+      headers: { "Content-Type": "application/json" }
+    });
     dispatch({
       type: MESSAGE_SUCCESS,
       payload: res.data
