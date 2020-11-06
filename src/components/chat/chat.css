@@ -5,7 +5,7 @@
   position: fixed;
   right: 20px;
   background: #cfd8dc;
-  border-radius: 20px;
+  border-radius: 10px;
   bottom: 82px;
   height: 500px;
   bottom: 38px;
@@ -28,6 +28,10 @@
   align-items: center;
   justify-content: center;
   padding-top: 1px;
+  cursor: pointer;
+}
+.close-bot:focus {
+  outline: none;
 }
 .chat-body {
   overflow: scroll;
@@ -48,26 +52,48 @@
   width: fit-content;
 }
 
+.chat-wrapper {
+  clear: both;
+  margin: 0 15px 15px;
+}
+.chat-wrapper .chat-btn {
+  padding: 8px;
+  margin: 0 5px 5px 0;
+  border-radius: 5px;
+  border: 2px solid #fe6016;
+  color: #636161;
+  background: #cfd8dc;
+  cursor: pointer;
+}
+
+.chat-wrapper .chat-btn:hover {
+  color: #fff;
+  background: #fe6016;
+}
+.chat-wrapper .chat-btn:focus {
+  outline: none;
+}
+
 .chat-bubble-user,
 .chat-bubble-bot {
   box-shadow: -1px 5px 16px rgb(0 0 0 / 37%);
-  clear: both;
-  margin: 0 15px 15px;
+  margin: 0 0 15px;
   padding: 10px 15px;
   font-size: 14px;
+  white-space: pre-wrap;
 }
 
 .chat-bubble-user {
   background: #38413b;
   color: #ffffff;
   float: right;
-  border-radius: 15px 0 15px 15px;
+  border-radius: 10px 0 10px 10px;
 }
 .chat-bubble-bot {
   background: #fff;
   color: #636161;
   float: left;
-  border-radius: 0 15px 15px 15px;
+  border-radius: 0 10px 10px 10px;
 }
 
 /* ***  Footer  *** */
@@ -77,8 +103,8 @@
   width: 100%;
   height: 50px;
   overflow: hidden;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .chat-footer .input {
@@ -127,4 +153,7 @@
   bottom: 0;
   right: 0;
   box-shadow: -8px 6px 16px 0 rgb(0 0 0 / 48%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.open-chatbot:focus {
+  outline: none;
 }

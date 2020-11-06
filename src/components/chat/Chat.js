@@ -23,6 +23,12 @@ const Chat = ({ chat, userMessage, sendMessage }) => {
 
   useEffect(scrollToBottom, [chat, showBot]);
 
+  //Function that sends message when user click button in chat
+  const handleBotButton = btnData => {
+    userMessage(btnData.text);
+    sendMessage(btnData.text);
+  };
+
   //  Function that handles user submission
   const handleClick = async e => {
     // const code = e.keyCode || e.which;
@@ -55,11 +61,22 @@ const Chat = ({ chat, userMessage, sendMessage }) => {
             {!chat.length
               ? ""
               : chat.map((msg, index) => (
-                  <div
-                    key={`chat_${index}`}
-                    className={`chat-bubble-${msg.type}`}
-                  >
-                    {msg.message}
+                  <div className="chat-wrapper" key={`chat_${index}`}>
+                    <div className={`chat-bubble-${msg.type}`}>
+                      {msg.response.message}
+                    </div>
+                    {msg.response.responseCard &&
+                      msg.response.responseCard.genericAttachments[0].buttons.map(
+                        (button, index) => (
+                          <button
+                            key={`${button.value}_${index}`}
+                            className="chat-btn"
+                            onClick={() => handleBotButton(button)}
+                          >
+                            {button.text}
+                          </button>
+                        )
+                      )}
                   </div>
                 ))}
           </div>

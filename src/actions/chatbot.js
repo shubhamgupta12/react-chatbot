@@ -9,6 +9,9 @@ import {
 //  Import axios
 import axios from "axios";
 
+// Import data
+// import data from './data.json';
+
 //  Function that handles  users message
 export const userMessage = message => async dispatch => {
   try {
@@ -20,10 +23,12 @@ export const userMessage = message => async dispatch => {
 
 //  Sends the message to the bot - API CALL
 export const sendMessage = message => async dispatch => {
+  const URL1 = "https://d7se6vu2fb.execute-api.ap-northeast-1.amazonaws.com/stage1/chat";
+  // const URL2 = "https://gvsr9xpjq1.execute-api.ap-southeast-1.amazonaws.com/test/chat";
   try {
     const body = { text: message };
     const res = await axios.post(
-      "https://gvsr9xpjq1.execute-api.ap-southeast-1.amazonaws.com/test/chat",
+      `${URL1}`,
       body,
       {
         headers: { "Content-Type": "application/json" }
@@ -31,7 +36,7 @@ export const sendMessage = message => async dispatch => {
     );
     dispatch({
       type: MESSAGE_SUCCESS,
-      payload: JSON.parse(res.data.body).message
+      payload: res.data
     });
   } catch (err) {
     console.error("ERROR:", err);
