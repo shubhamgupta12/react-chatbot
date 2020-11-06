@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gets-chatbot/static/css/main.b3a122e2.chunk.css",
+    "main.js": "/gets-chatbot/static/js/main.1469a83f.chunk.js",
+    "main.js.map": "/gets-chatbot/static/js/main.1469a83f.chunk.js.map",
+    "runtime-main.js": "/gets-chatbot/static/js/runtime-main.cf9d13f4.js",
+    "runtime-main.js.map": "/gets-chatbot/static/js/runtime-main.cf9d13f4.js.map",
+    "static/js/2.2f1a2019.chunk.js": "/gets-chatbot/static/js/2.2f1a2019.chunk.js",
+    "static/js/2.2f1a2019.chunk.js.map": "/gets-chatbot/static/js/2.2f1a2019.chunk.js.map",
+    "index.html": "/gets-chatbot/index.html",
+    "static/css/main.b3a122e2.chunk.css.map": "/gets-chatbot/static/css/main.b3a122e2.chunk.css.map",
+    "static/js/2.2f1a2019.chunk.js.LICENSE.txt": "/gets-chatbot/static/js/2.2f1a2019.chunk.js.LICENSE.txt",
+    "static/media/ellipsis.d45d5899.svg": "/gets-chatbot/static/media/ellipsis.d45d5899.svg",
+    "static/media/App.css": "/gets-chatbot/static/media/getsph.d24552f5.jpg",
+    "static/media/paper-plane.ee9b5c8a.svg": "/gets-chatbot/static/media/paper-plane.ee9b5c8a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf9d13f4.js",
+    "static/js/2.2f1a2019.chunk.js",
+    "static/css/main.b3a122e2.chunk.css",
+    "static/js/main.1469a83f.chunk.js"
+  ]
+}
